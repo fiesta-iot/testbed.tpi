@@ -162,8 +162,8 @@ public class TpiApiTestbedProviderServices {
 	}
 
 	/**
-	 * @param pushLastObservationsPayload
-	 *            the pushLastObservationsPayload is a JSON as the following 
+	 * @param stopPushOfObservationsPayload
+	 *            the stopPushOfObservationsPayload is a JSON as the following 
 	 *            {
 	 *            		"sensorIDs": [<String> sensorIDs], 
 	 *            		"endpointURI": <String> theEndpointURI 
@@ -176,12 +176,12 @@ public class TpiApiTestbedProviderServices {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/stopPushOfObservations")
-	public Response stopPushOfObservations(String pushLastObservationsPayload) {
+	public Response stopPushOfObservations(String stopPushOfObservationsPayload) {
 		logger.info("Push Single Observation.");
 
 		try {
 			final ObjectMapper mapper = new ObjectMapper();
-			Map<String, Object> map = mapper.readValue(pushLastObservationsPayload,
+			Map<String, Object> map = mapper.readValue(stopPushOfObservationsPayload,
 					new TypeReference<HashMap<String, Object>>() {
 					});
 			final List<String> sensorIDs = (List<String>) map.get("sensorIDs");
