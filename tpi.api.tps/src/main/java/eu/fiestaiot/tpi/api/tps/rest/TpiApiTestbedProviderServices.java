@@ -51,7 +51,7 @@ public class TpiApiTestbedProviderServices {
 	@GET()
 	@Produces("text/plain")
 	public String welcomeMessage() {
-		String welcomeText = "Welcome to Testbed Provider Interface Data Managment Services\n"
+		String welcomeText = "Welcome to Testbed Provider Service Interface\n"
 				+ "=============================================================\n\n";
 		logger.debug(welcomeText);
 		return welcomeText;
@@ -154,7 +154,7 @@ public class TpiApiTestbedProviderServices {
 			PushLastObservationsImpl plo = new PushLastObservationsImpl(endpointURI, sensorIDs);
 			return plo.pushLastObservationResultSet();
 		} catch (IOException e) {
-			logger.error("[ERROR]: Failed to get push last observations. " + e.getMessage());
+			logger.error("[ERROR]:" + e.getMessage());
 			
 			return Response.status(HttpURLConnection.HTTP_BAD_REQUEST)
 					.entity(e.getMessage()).build(); 

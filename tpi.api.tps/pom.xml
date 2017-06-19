@@ -155,11 +155,19 @@
 
     <!-- ======== LogBack Dependencies ========== -->
 
-    <dependency>
+<!--     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>1.0.11</version>
-    </dependency>
+    </dependency> -->
+
+   <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
+
+   </dependency>
+
 
 
     <!-- ========javamelody (monitoring) dependency ==========-->

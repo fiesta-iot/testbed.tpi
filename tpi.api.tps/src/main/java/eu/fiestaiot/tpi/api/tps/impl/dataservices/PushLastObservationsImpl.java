@@ -23,6 +23,8 @@ public class PushLastObservationsImpl {
 	 * The endpoint URI.
 	 */
 	private String endpointURI;
+	
+	private String stopPushOfObservationsURL = "the_stop_push_of_observations_URL";
 
 	/**
 	 * The sensors ID list.
@@ -50,7 +52,13 @@ public class PushLastObservationsImpl {
 	 */
 	public Response pushLastObservationResultSet() {
 		
-		return Response.status(HttpURLConnection.HTTP_OK)
-				.entity("Push_Schedule_ Successfully_Set_Up").build();
+//		return Response.status(HttpURLConnection.HTTP_OK)
+//				.entity("Push_Schedule_ Successfully_Set_Up").build();
+		
+		return Response
+				.ok("{\"response\" : \"Push_Schedule_ Successfully_Set_Up.\" , \n \"stopPushOfObservations\" : \""
+						+ stopPushOfObservationsURL + "\"}").build();
+		
+		
 	}
 }
