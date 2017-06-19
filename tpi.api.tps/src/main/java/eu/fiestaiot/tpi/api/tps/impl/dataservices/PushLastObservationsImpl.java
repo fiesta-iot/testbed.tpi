@@ -52,9 +52,6 @@ public class PushLastObservationsImpl {
 	 */
 	public Response pushLastObservationResultSet() {
 		
-//		return Response.status(HttpURLConnection.HTTP_OK)
-//				.entity("Push_Schedule_ Successfully_Set_Up").build();
-		
 		return Response
 				.ok("{\"response\" : \"Push_Schedule_ Successfully_Set_Up.\" , \n \"stopPushOfObservations\" : \""
 						+ stopPushOfObservationsURL + "\"}").build();
